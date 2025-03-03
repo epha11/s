@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Background Video */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Centered Profile Section */
+        .profile-section {
+            background: rgba(66, 0, 66, 0.7); /* Dark purple with transparency */
+            border-radius: 15px;
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            flex-direction: column;
+        }
+
+        /* Layout for Profile (Image and GIF) */
+        .profile-inner {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap; /* Allow elements to wrap on small screens */
+            justify-content: center;
+        }
+
+        /* Profile Picture */
+        .profile-picture {
+            flex: 0 0 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Name GIF and Links */
+        .profile-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+        }
+
+        .profile-info img {
+            width: 200px; /* Adjusted GIF size for smaller screens */
+            margin-bottom: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .links img {
+            width: 35px; /* Reduced icon size for mobile */
+            height: 35px;
+        }
+
+        /* Apps Section */
+        .apps-section {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .app {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        .app:hover {
+            transform: scale(1.1);
+        }
+
+        .app img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .app a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* About Me Paragraph */
+        .about-me {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #e0e0e0;
+            width: 100%;
+        }
+
+        /* Audio Section */
+        audio {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: -2;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .profile-section {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .profile-inner {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-picture {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .profile-info img {
+                width: 250px;
+            }
+
+            .apps-section {
+                gap: 15px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .app {
+                width: 80%;
+            }
+
+            .links img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .about-me {
+                font-size: 14px;
+            }
+        }
+
+        /* iPhone X and smaller screens */
+        @media screen and (max-width: 375px) {
+            .profile-info img {
+                width: 200px;
+            }
+
+            .links img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .about-me {
+                font-size: 12px;
+            }
+
+            .apps-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .app {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted>
+        <source src="background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <!-- Profile Picture, Name GIF, and Links -->
+        <div class="profile-inner">
+            <div class="profile-picture">
+                <img src="floki2.png" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <img src="floki3.gif" alt="Profile Name GIF">
+                <div class="links">
+                    <a href="https://github.com/epha11" target="_blank">
+                        <img src="git.png" alt="GitHub">
+                    </a>
+                    <a href="https://tryhackme.com/p/FlokiGSG" target="_blank">
+                        <img src="tryhackme.svg" alt="TryHackMe">
+                    </a>
+                    <!-- Add other links here if needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Apps Section -->
+        <div class="apps-section">
+            <div class="app">
+                <img src="snop.png" alt="App 1">
+                <a href="app1-download-link" download>snoopy</a>
+            </div>
+            <div class="app">
+                <img src="plain.png" alt="App 2">
+                <a href="app2-download-link" download>MakoSS</a>
+            </div>
+            <div class="app">
+                <img src="xs.png" alt="App 3">
+                <a href="app3-download-link" download>xsnetwork</a>
+            </div>
+            <div class="app">
+                <img src="wraith.png" alt="App 4">
+                <a href="app4-download-link" download>wraith</a>
+            </div>
+            <div class="app">
+                <img src="hel.png" alt="App 5">
+                <a href="app5-download-link" download>FlokiOS</a>
+            </div>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="about-me">
+            <p>🇷🇺 and 🇺🇲 should be allies fr.  </p>
+            <p>She knows who she is 🤭😘</p>
+        </div>
+    </div>
+
+    <!-- Audio Section -->
+    <audio autoplay loop>
+        <source src="nutshell.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
